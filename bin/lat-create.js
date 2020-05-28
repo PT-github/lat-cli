@@ -22,25 +22,35 @@ function terminalList () {
   }))
 }
 
-program.usage('<project-name>')
+program.usage('<project-name>').parse(process.argv)
+
+// 根据输入，获取项目名称
+let projectName = program.args[0]
+
+if (!projectName) { // project-name 必填
+  // 相当于执行命令的--help选项，显示help信息，这是commander内置的一个命令选项
+  program.help()
+  return
+ }
 
 inquirer.prompt([
-  {
-    name: 'projectName',
-    message: '项目的名称',
-    validate: value => {
-      var hasZh = /.*[\u4e00-\u9fa5]+.*$/.test(value)
-      if (!value) {
-        return '请输入项目名称'
-      } else if (hasZh) {
-        return '请输入英文名称'
-      }
+  // {
+  //   name: 'projectName',
+  //   message: '项目的名称',
+  //   validate: value => {
+  //     var hasZh = /.*[\u4e00-\u9fa5]+.*$/.test(value)
+  //     if (!value) {
+  //       return '请输入项目名称'
+  //     } else if (hasZh) {
+  //       return '请输入英文名称'
+  //     }
 
-      return true
-    }
-  }, {
+  //     return true
+  //   }
+  // },
+  {
     name: 'description',
-    message: '项目的简介',
+    message: '项目的简介'
   },
   {
     type: 'list',
@@ -49,8 +59,6 @@ inquirer.prompt([
     choices: terminalList()
   }
 ]).then(answers => {
-  console.log(JSON.stringify(answers))
-  let { projectName } = answers
   const list = glob.sync('*') // 遍历当前目录
   if (list.length) {
     // 当前目录不为空 如果该目录下包含了projectName的文件或文件夹 则抛出错误日志 退出
@@ -60,7 +68,7 @@ inquirer.prompt([
       return Promise.reject(`项目${projectName}已经存在`)
     }
   }
-  go(answers)
+  go({...answers, projectName})
 }).catch(err => {
   console.error(err)
 })
@@ -102,6 +110,3 @@ function finish (dir) {
   console.log()
   console.log(chalk.green('cd ' + dir + '\nnpm run dev'))
 }
-
-
-console.log(process.cwd())
