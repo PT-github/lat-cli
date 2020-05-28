@@ -8,7 +8,13 @@
   "keywords": [],
   "author": "pengtao",
   "license": "ISC",
-  "devDependencies": {
+  "devDependencies": {},
+  "dependencies": {
+    "inquirer": "^7.1.0",
+    "download-git-repo": "^3.0.2",
+    "log-symbols": "^4.0.0",
+    "node-stream-zip": "^1.11.1",
+    "ora": "^4.0.4",
     "chalk": "^4.0.0",
     "co": "^4.6.0",
     "co-prompt": "^1.0.0",
@@ -16,16 +22,9 @@
     "eslint": "^7.1.0",
     "glob": "^7.1.6",
     "handlebars": "^4.7.6",
-    "inquirer": "^7.1.0",
     "metalsmith": "^2.3.0",
     "mvdir": "^1.0.17",
     "rimraf": "^3.0.2"
-  },
-  "dependencies": {
-    "download-git-repo": "^3.0.2",
-    "log-symbols": "^4.0.0",
-    "node-stream-zip": "^1.11.1",
-    "ora": "^4.0.4"
   },
   "directories": {
     "lib": "lib"
