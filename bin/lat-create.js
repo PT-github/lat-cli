@@ -76,8 +76,8 @@ async function go ({ projectName, description, terminal }) {
     // https://github.com/PT-github/frontframe.git#master
     let url = 'github:' + gitRep[terminal].git.https.replace('https://github.com/', '').replace('.git', '')
     let target = await download(projectName, url)
-    let downPath = path.join(__dirname, '../', target)
-    let projectPath = path.join(__dirname, '../', projectName)
+    let downPath = path.join(process.cwd(), target)
+    let projectPath = path.join(process.cwd(), projectName)
     // 重写package.json文件
     await rewriteJson(path.join(downPath, 'package.json'), { name: projectName, description })
     // 将文件从.download-temp目录下复制到项目目录下
@@ -102,3 +102,6 @@ function finish (dir) {
   console.log()
   console.log(chalk.green('cd ' + dir + '\nnpm run dev'))
 }
+
+
+console.log(process.cwd())
