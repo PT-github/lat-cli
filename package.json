@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "前端框架选择脚手架",
   "bin": {
-    "lat": "./bin/lat"
+    "lat": "./bin/lat.js"
   },
   "keywords": [],
   "author": "pengtao",
