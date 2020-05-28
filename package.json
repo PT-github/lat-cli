@@ -1,0 +1,41 @@
+{
+  "name": "lat-cli",
+  "version": "1.0.0",
+  "description": "前端框架选择脚手架",
+  "bin": {
+    "lat": "./bin/lat"
+  },
+  "keywords": [],
+  "author": "pengtao",
+  "license": "ISC",
+  "devDependencies": {
+    "chalk": "^4.0.0",
+    "co": "^4.6.0",
+    "co-prompt": "^1.0.0",
+    "commander": "^5.1.0",
+    "eslint": "^7.1.0",
+    "glob": "^7.1.6",
+    "handlebars": "^4.7.6",
+    "inquirer": "^7.1.0",
+    "metalsmith": "^2.3.0",
+    "mvdir": "^1.0.17",
+    "rimraf": "^3.0.2"
+  },
+  "dependencies": {
+    "download-git-repo": "^3.0.2",
+    "log-symbols": "^4.0.0",
+    "node-stream-zip": "^1.11.1",
+    "ora": "^4.0.4"
+  },
+  "directories": {
+    "lib": "lib"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/PT-github/lat-cli.git"
+  },
+  "bugs": {
+    "url": "https://github.com/PT-github/lat-cli/issues"
+  },
+  "homepage": "https://github.com/PT-github/lat-cli#readme"
+}
