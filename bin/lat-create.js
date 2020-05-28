@@ -74,7 +74,7 @@ async function go ({ projectName, description, terminal }) {
   try {
     // github:PT-github/test#master
     // https://github.com/PT-github/frontframe.git#master
-    let url = 'github:' + gitRep[terminal].git.https.replace('https://github.com/', '')
+    let url = 'github:' + gitRep[terminal].git.https.replace('https://github.com/', '').replace('.git', '')
     let target = await download(projectName, url)
     let downPath = path.join(__dirname, '../', target)
     let projectPath = path.join(__dirname, '../', projectName)
