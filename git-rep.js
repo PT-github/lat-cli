@@ -2,7 +2,7 @@
  * @Author: PT
  * @Date: 2020-05-27 15:37:26
  * @LastEditors: PT
- * @LastEditTime: 2020-05-29 17:04:51
+ * @LastEditTime: 2020-05-29 17:11:45
  * @Description: 仓库列表
  */ 
 module.exports = [
@@ -10,7 +10,7 @@ module.exports = [
     name: 'APP',
     desc: '移动端框架，技术栈vue，UI为：vant-ui，集成了pxtorem以及多环境配置',
     git: {
-      url: 'https://github.com/PT-github/test.git#master',
+      url: 'https://github.com/PT-github/frontframe.git#master',
       type: 'github'
     }
   },
@@ -18,7 +18,7 @@ module.exports = [
     name: 'PC',
     desc: 'PC端框架，技术栈vue，UI为：element-ui',
     git: {
-      url: 'https://github.com/PT-github/test.git#test',
+      url: 'https://github.com/PT-github/frontframe.git#frontiframeForPC',
       type: 'github'
     }
   }
