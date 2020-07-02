@@ -23,6 +23,7 @@
     "handlebars": "^4.7.6",
     "inquirer": "^7.2.0",
     "log-symbols": "^4.0.0",
+    "lru-cache": "^5.1.1",
     "metalsmith": "^2.3.0",
     "minimist": "^1.2.5",
     "mvdir": "^1.0.17",
